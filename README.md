@@ -1,22 +1,25 @@
 # gift
 giftexport
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>NFT Gifts Shop</title>
+  <title>NFT Подарки Telegram</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
     body {
       font-family: sans-serif;
       text-align: center;
-      padding: 30px;
-      background-color: #f4f4f4;
+      background-color: #f7f7f7;
+      padding: 40px;
+    }
+    h1 {
+      color: #0088cc;
     }
     button {
-      padding: 15px 25px;
+      padding: 15px 30px;
       font-size: 18px;
-      background-color: #0088cc;
+      background: #0088cc;
       color: white;
       border: none;
       border-radius: 10px;
@@ -26,7 +29,7 @@ giftexport
 </head>
 <body>
   <h1>🎁 NFT Подарки</h1>
-  <p>Нажмите кнопку ниже, чтобы купить подарок за Stars</p>
+  <p>Нажми кнопку, чтобы купить подарок за Stars</p>
   <button onclick="buyGift()">Купить за Stars</button>
 
   <script>
@@ -34,10 +37,10 @@ giftexport
 
     function buyGift() {
       Telegram.WebApp.openInvoice({
-        slug: "example_gift_slug", // Заменишь позже на реальный slug
+        slug: "example_slug", // тут будет реальный slug от Telegram Mini App
         callback: (status) => {
           if (status === 'paid') {
-            alert("🎉 Покупка успешна!");
+            alert("✅ Покупка прошла успешно!");
           } else {
             alert("❌ Покупка не удалась");
           }
